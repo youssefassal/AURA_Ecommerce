@@ -37,15 +37,9 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// Only start server if not in Vercel serverless environment
-if (process.env.VERCEL !== "1") {
-  app.listen(PORT, () => {
-    console.log("Server is running on http://localhost:" + PORT);
-    connectDB();
-  });
-} else {
-  // For Vercel, connect to DB without listening
+app.listen(PORT, () => {
+  console.log("Server is running on http://localhost:" + PORT);
   connectDB();
-}
+});
 
 export default app;
