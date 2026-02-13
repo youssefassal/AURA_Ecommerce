@@ -14,17 +14,17 @@ const PurchaseSuccessPage = () => {
   useEffect(() => {
     const handleCheckoutSuccess = async (sessionId) => {
       try {
-        await axios.post("/payments/checkout-success", { sessionId });
+        await axios.post("/api/payments/checkout-success", { sessionId });
         clearCart();
-      } catch (error) {
-        console.error("Error confirming checkout success:", error);
+      } catch {
+        // Silently fail
       } finally {
         setIsProcessing(false);
       }
     };
 
     const sessionId = new URLSearchParams(window.location.search).get(
-      "session_id"
+      "session_id",
     );
 
     if (sessionId) {

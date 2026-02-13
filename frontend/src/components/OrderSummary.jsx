@@ -14,7 +14,7 @@ const OrderSummary = () => {
 
   const handlePayment = async () => {
     try {
-      const res = await axios.post("/payments/create-checkout-session", {
+      const res = await axios.post("/api/payments/create-checkout-session", {
         products: cart,
         couponCode: coupon ? coupon.code : null,
       });
@@ -24,8 +24,8 @@ const OrderSummary = () => {
       if (session.url) {
         window.location.href = session.url;
       }
-    } catch (error) {
-      console.error("Payment error:", error);
+    } catch {
+      // Silently fail or add a toast if needed
     }
   };
 

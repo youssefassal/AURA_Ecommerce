@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import toast from "react-hot-toast";
-import axios from "axios";
+import axios from "../lib/axios";
 
 export const useProductStore = create((set) => ({
   products: [],
@@ -46,7 +46,7 @@ export const useProductStore = create((set) => ({
       await axios.delete(`/api/products/${productId}`);
       set((prevProducts) => ({
         products: prevProducts.products.filter(
-          (product) => product._id !== productId
+          (product) => product._id !== productId,
         ),
         loading: false,
       }));
@@ -63,14 +63,14 @@ export const useProductStore = create((set) => ({
         products: prevProducts.products.map((product) =>
           product._id === productId
             ? { ...product, isFeatured: response.data.isFeatured }
-            : product
+            : product,
         ),
         loading: false,
       }));
     } catch (error) {
       set({ loading: false });
       toast.error(
-        error.response.data.error || "Failed to toggle featured status"
+        error.response.data.error || "Failed to toggle featured status",
       );
     }
   },
@@ -80,9 +80,8 @@ export const useProductStore = create((set) => ({
     try {
       const response = await axios.get("/api/products/featured");
       set({ products: response.data, loading: false });
-    } catch (error) {
+    } catch {
       set({ error: "Failed to fetch products", loading: false });
-      console.error("Error fetching featured products:", error);
     }
   },
 }));

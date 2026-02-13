@@ -41,6 +41,19 @@ const CartPage = () => {
             >
               <OrderSummary />
               <GiftCouponCard />
+              <div className="text-center space-y-4 rounded-lg border border-gray-700 bg-gray-800 p-4 shadow-sm sm:p-6">
+                <h2 className="text-sm font-semibold text-white">
+                  card num: 4242 4242 4242 4242
+                </h2>
+                <h2 className="text-sm font-semibold text-white">exp: 04/26</h2>
+                <h2 className="text-sm font-semibold text-white">cvc: 424</h2>
+                <h2 className="text-sm font-semibold text-white">
+                  name: John Doe
+                </h2>
+                <h2 className="text-sm font-semibold text-white">
+                  country: Egypt
+                </h2>
+              </div>
             </Motion.div>
           )}
         </div>

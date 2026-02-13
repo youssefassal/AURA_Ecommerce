@@ -11,12 +11,11 @@ const PeopleAlsoBought = () => {
   useEffect(() => {
     const fetchRecommendations = async () => {
       try {
-        const res = await axios.get("/products/recommendations");
-        console.log(res.data);
+        const res = await axios.get("/api/products/recommendations");
         setRecommendations(res.data);
       } catch (error) {
         toast.error(
-          error.response.data.error || "Failed to fetch recommendations"
+          error.response?.data?.message || "Failed to fetch recommendations",
         );
       } finally {
         setIsLoading(false);

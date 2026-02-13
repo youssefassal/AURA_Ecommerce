@@ -1,12 +1,23 @@
 import { ChevronLeft, ChevronRight, ShoppingCart } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useCartStore } from "../stores/useCartStore";
+import useUserStore from "../stores/useUserStore";
+import toast from "react-hot-toast";
 
 const FeaturedProducts = ({ featuredProducts }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(4);
 
+  const { user } = useUserStore();
   const { addToCart } = useCartStore();
+
+  const handleAddToCart = (product) => {
+    if (!user) {
+      toast.error("Please log in to add items to your cart", { id: "login" });
+      return;
+    }
+    addToCart(product);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -50,7 +61,7 @@ const FeaturedProducts = ({ featuredProducts }) => {
             >
               {featuredProducts?.map((product) => (
                 <div
-                  key={product.id}
+                  key={product._id}
                   className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 shrink-0 px-2"
                 >
                   <div className="bg-gray-800 bg-opacity-10 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden h-full transition-all duration-300 hover:shadow-xl border border-emerald-500/30">
@@ -69,7 +80,7 @@ const FeaturedProducts = ({ featuredProducts }) => {
                         ${product.price.toFixed(2)}
                       </p>
                       <button
-                        onClick={() => addToCart(product)}
+                        onClick={() => handleAddToCart(product)}
                         className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-2 px-4 rounded transition-colors duration-300 flex items-center justify-center"
                       >
                         <ShoppingCart className="h-5 w-5 mr-2" />

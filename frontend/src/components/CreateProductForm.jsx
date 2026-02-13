@@ -37,8 +37,7 @@ const CreateProductForm = () => {
         image: "",
       });
       toast.success("Product created successfully");
-    } catch (error) {
-      console.error("Error creating product:", error);
+    } catch {
       toast.error("Failed to create product");
     }
   };
@@ -50,11 +49,11 @@ const CreateProductForm = () => {
 
       reader.onloadend = () => {
         setNewProduct({ ...newProduct, image: reader.result });
+        toast.success("Image uploaded successfully");
       };
 
       reader.readAsDataURL(file); // Convert image file to base64 string
     }
-    toast.success("Image uploaded successfully");
   };
 
   return (
