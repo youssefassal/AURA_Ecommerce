@@ -46,7 +46,7 @@ const FeaturedProducts = ({ featuredProducts }) => {
   return (
     <div className="py-12">
       <div className="container mx-auto px-4">
-        <h2 className="text-center text-5xl sm:text-6xl font-bold text-emerald-400 mb-4">
+        <h2 className="text-center text-5xl sm:text-6xl font-bold text-primary mb-4">
           Featured
         </h2>
         <div className="relative">
@@ -64,7 +64,7 @@ const FeaturedProducts = ({ featuredProducts }) => {
                   key={product._id}
                   className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 shrink-0 px-2"
                 >
-                  <div className="bg-gray-800 bg-opacity-10 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden h-full transition-all duration-300 hover:shadow-xl border border-emerald-500/30">
+                  <div className="bg-surface bg-opacity-10 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden h-full transition-all duration-300 hover:shadow-xl border border-primary-dark/30">
                     <div className="overflow-hidden">
                       <img
                         src={product.image}
@@ -76,12 +76,12 @@ const FeaturedProducts = ({ featuredProducts }) => {
                       <h3 className="text-lg font-semibold text-white mb-2">
                         {product.name}
                       </h3>
-                      <p className="font-medium text-emerald-400 mb-4">
+                      <p className="font-medium text-primary mb-4">
                         ${product.price.toFixed(2)}
                       </p>
                       <button
                         onClick={() => handleAddToCart(product)}
-                        className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-2 px-4 rounded transition-colors duration-300 flex items-center justify-center"
+                        className="w-full bg-primary-darker hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded transition-colors duration-300 flex items-center justify-center"
                       >
                         <ShoppingCart className="h-5 w-5 mr-2" />
                         Add to Cart
@@ -98,7 +98,7 @@ const FeaturedProducts = ({ featuredProducts }) => {
             className={`absolute top-1/2 -left-4 transform -translate-y-1/2 p-2 rounded-full transition-colors duration-300 ${
               isStartDisabled
                 ? "bg-gray-400 cursor-not-allowed"
-                : "bg-emerald-600 hover:bg-emerald-500"
+                : "bg-primary-darker hover:bg-primary-dark"
             }`}
           >
             <ChevronLeft className="h-6 w-6" />
@@ -109,7 +109,7 @@ const FeaturedProducts = ({ featuredProducts }) => {
             className={`absolute top-1/2 -right-4 transform -translate-y-1/2 p-2 rounded-full transition-colors duration-300 ${
               isEndDisabled
                 ? "bg-gray-400 cursor-not-allowed"
-                : "bg-emerald-600 hover:bg-emerald-500"
+                : "bg-primary-darker hover:bg-primary-dark"
             }`}
           >
             <ChevronRight className="h-6 w-6" />

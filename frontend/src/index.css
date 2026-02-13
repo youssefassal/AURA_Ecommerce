@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+@theme {
+  /* Primary Emerald Bank */
+  --color-primary-light: var(--color-purple-300);
+  --color-primary: var(--color-purple-400);
+  --color-primary-dark: var(--color-purple-500);
+  --color-primary-darker: var(--color-purple-600);
+  --color-primary-deep: var(--color-purple-700);
+  --color-primary-darkest: var(--color-purple-800);
+
+  --color-primary-hover: var(--color-purple-300);
+
+  /* Functional Surfaces */
+  --color-bg-dark: var(--color-gray-900);
+  --color-surface: var(--color-gray-800);
+  --color-surface-hover: var(--color-gray-700);
+  --color-surface-light: var(--color-gray-600);
+  --color-surface-lighter: var(--color-gray-500);
+  /* Custom Utilities */
+  --background-image-main-gradient: radial-gradient(
+    ellipse at top,
+    color-mix(in srgb, var(--color-primary) 30%, transparent) 0%,
+    color-mix(in srgb, var(--color-primary-darkest) 20%, transparent) 45%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}

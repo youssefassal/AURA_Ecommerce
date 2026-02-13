@@ -41,7 +41,7 @@ const CartPage = () => {
             >
               <OrderSummary />
               <GiftCouponCard />
-              <div className="text-center space-y-4 rounded-lg border border-gray-700 bg-gray-800 p-4 shadow-sm sm:p-6">
+              <div className="text-center space-y-4 rounded-lg border border-surface-hover bg-surface p-4 shadow-sm sm:p-6">
                 <h2 className="text-sm font-semibold text-white">
                   card num: 4242 4242 4242 4242
                 </h2>
@@ -75,7 +75,7 @@ const EmptyCartUI = () => (
     <h3 className="text-2xl font-semibold">Your cart is empty</h3>
     <p>Looks like you {"haven't"} added anything to your cart yet</p>
     <Link
-      className="mt-4 rounded-md bg-emerald-500 px-6 py-2 text-white transition-colors hover:bg-emerald-600"
+      className="mt-4 rounded-md bg-primary px-6 py-2 text-white transition-colors hover:bg-primary-dark"
       to="/"
     >
       Start Shopping

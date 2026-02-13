@@ -31,12 +31,12 @@ const OrderSummary = () => {
 
   return (
     <Motion.div
-      className="space-y-4 rounded-lg border border-gray-700 bg-gray-800 p-4 shadow-sm md:p-6"
+      className="space-y-4 rounded-lg border border-surface-hover bg-surface p-4 shadow-sm md:p-6"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <p className="text-xl font-semibold text-emerald-400">Order Summary</p>
+      <p className="text-xl font-semibold text-primary">Order Summary</p>
       <div className="space-y-4">
         <div className="space-y-2">
           <dl className="flex items-center justify-between gap-4">
@@ -70,14 +70,14 @@ const OrderSummary = () => {
 
           <dl className="flex items-center justify-between gap-4">
             <dt className="text-base font-normal text-white">Total</dt>
-            <dd className="text-base font-medium text-emerald-400">
+            <dd className="text-base font-medium text-primary">
               ${formattedTotal}
             </dd>
           </dl>
         </div>
 
         <Motion.button
-          className="flex w-full items-center justify-center rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-300"
+          className="flex w-full items-center justify-center rounded-lg bg-primary-darker px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-deep focus:outline-none focus:ring-4 focus:ring-primary-light/50"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handlePayment}
@@ -89,7 +89,7 @@ const OrderSummary = () => {
           <span className="text-sm font-normal text-gray-400">or</span>
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-sm font-medium text-emerald-400 underline hover:text-emerald-300 hover:no-underline"
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary underline hover:text-primary-light hover:no-underline"
           >
             Continue Shopping
             <MoveRight size={16} />

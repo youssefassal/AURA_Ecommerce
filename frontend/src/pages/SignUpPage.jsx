@@ -26,7 +26,7 @@ const SignUpPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="mt-6 text-center text-3xl font-semibold text-emerald-400">
+        <h2 className="mt-6 text-center text-3xl font-semibold text-primary">
           Create you account
         </h2>
       </Motion.div>
@@ -37,7 +37,7 @@ const SignUpPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="bg-gray-800 py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <div className="bg-surface py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label
@@ -58,7 +58,7 @@ const SignUpPage = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="block w-full px-3 py-2 pl-10 bg-gray-700 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
+                  className="block w-full px-3 py-2 pl-10 bg-surface-hover border border-surface-light rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-dark focus:border-primary-dark sm:text-sm"
                   placeholder="Youssef Assal"
                 />
               </div>
@@ -83,7 +83,7 @@ const SignUpPage = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="block w-full px-3 py-2 pl-10 bg-gray-700 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
+                  className="block w-full px-3 py-2 pl-10 bg-surface-hover border border-surface-light rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-dark focus:border-primary-dark sm:text-sm"
                   placeholder="you@example.com"
                 />
               </div>
@@ -108,7 +108,7 @@ const SignUpPage = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, password: e.target.value })
                   }
-                  className="block w-full px-3 py-2 pl-10 bg-gray-700 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
+                  className="block w-full px-3 py-2 pl-10 bg-surface-hover border border-surface-light rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-dark focus:border-primary-dark sm:text-sm"
                   placeholder="••••••••"
                 />
               </div>
@@ -136,7 +136,7 @@ const SignUpPage = () => {
                       confirmPassword: e.target.value,
                     })
                   }
-                  className="block w-full px-3 py-2 pl-10 bg-gray-700 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
+                  className="block w-full px-3 py-2 pl-10 bg-surface-hover border border-surface-light rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-dark focus:border-primary-dark sm:text-sm"
                   placeholder="••••••••"
                 />
               </div>
@@ -144,7 +144,7 @@ const SignUpPage = () => {
 
             <button
               type="submit"
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 transition duration-150 ease-in-out disabled:opacity-50"
+              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-darker hover:bg-primary-deep focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-dark transition duration-150 ease-in-out disabled:opacity-50"
               disabled={loading}
             >
               {loading ? (
@@ -168,7 +168,7 @@ const SignUpPage = () => {
             Already have an account?{" "}
             <Link
               to="/login"
-              className="font-medium text-emerald-600 hover:text-emerald-500"
+              className="font-medium text-primary-dark hover:text-primary"
             >
               Login here <ArrowRight className="inline-block h-4 w-4" />
             </Link>

@@ -58,12 +58,12 @@ const CreateProductForm = () => {
 
   return (
     <Motion.div
-      className="bg-gray-800 p-8 mb-8 rounded-lg shadow-lg max-w-lg mx-auto"
+      className="bg-surface p-8 mb-8 rounded-lg shadow-lg max-w-lg mx-auto"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <h2 className="text-2xl font-semibold mb-6 text-emerald-400">
+      <h2 className="text-2xl font-semibold mb-6 text-primary">
         Create New Product
       </h2>
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -83,7 +83,7 @@ const CreateProductForm = () => {
             onChange={(e) =>
               setNewProduct({ ...newProduct, name: e.target.value })
             }
-            className="w-full mt-1 block bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+            className="w-full mt-1 block bg-surface-hover border border-surface-light rounded-md shadow-sm py-2 px-3 text-focus:outline-none focus:ring-2 focus:ring-primary-dark focus:border-primary-dark"
             required
           />
         </div>
@@ -103,7 +103,7 @@ const CreateProductForm = () => {
               setNewProduct({ ...newProduct, description: e.target.value })
             }
             rows="3"
-            className="w-full mt-1 block bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+            className="w-full mt-1 block bg-surface-hover border border-surface-light rounded-md shadow-sm py-2 px-3 text-focus:outline-none focus:ring-2 focus:ring-primary-dark focus:border-primary-dark"
             required
           ></textarea>
         </div>
@@ -124,7 +124,7 @@ const CreateProductForm = () => {
               setNewProduct({ ...newProduct, price: e.target.value })
             }
             step="0.01"
-            className="w-full mt-1 block bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+            className="w-full mt-1 block bg-surface-hover border border-surface-light rounded-md shadow-sm py-2 px-3 text-focus:outline-none focus:ring-2 focus:ring-primary-dark focus:border-primary-dark"
             required
           />
         </div>
@@ -143,7 +143,7 @@ const CreateProductForm = () => {
             onChange={(e) =>
               setNewProduct({ ...newProduct, category: e.target.value })
             }
-            className="w-full mt-1 block bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+            className="w-full mt-1 block bg-surface-hover border border-surface-light rounded-md shadow-sm py-2 px-3 text-focus:outline-none focus:ring-2 focus:ring-primary-dark focus:border-primary-dark"
             required
           >
             <option value="">Select a category</option>
@@ -165,7 +165,7 @@ const CreateProductForm = () => {
           />
           <label
             htmlFor="image"
-            className="cursor-pointer bg-gray-700 py-2 px-3 border border-gray-600 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-300 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
+            className="cursor-pointer bg-surface-hover py-2 px-3 border border-surface-light rounded-md shadow-sm text-sm leading-4 font-medium text-gray-300 hover:bg-surface-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-dark"
           >
             <Upload className="h-5 w-5 inline-block mr-2" />
             Upload Image
@@ -177,7 +177,7 @@ const CreateProductForm = () => {
 
         <button
           type="submit"
-          className="w-full mt-6 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 disabled:opacity-50"
+          className="w-full mt-6 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-darker hover:bg-primary-deep focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-dark disabled:opacity-50"
         >
           {loading ? (
             <>

@@ -57,29 +57,29 @@ const AnalyticsTab = () => {
           title="Total Users"
           value={analyticsData.users.toLocaleString()}
           icon={Users}
-          color="from-emerald-500 to-teal-700"
+          color="from-primary to-primary-deep"
         />
         <AnalyticsCard
           title="Total Products"
           value={analyticsData.products.toLocaleString()}
           icon={Package}
-          color="from-emerald-500 to-green-700"
+          color="from-primary to-primary-darker"
         />
         <AnalyticsCard
           title="Total Sales"
           value={analyticsData.totalSales.toLocaleString()}
           icon={ShoppingCart}
-          color="from-emerald-500 to-cyan-700"
+          color="from-primary to-primary-darker"
         />
         <AnalyticsCard
           title="Total Revenue"
           value={`$${analyticsData.totalRevenue.toLocaleString()}`}
           icon={DollarSign}
-          color="from-emerald-500 to-lime-700"
+          color="from-primary to-primary-darker"
         />
       </div>
       <Motion.div
-        className="bg-gray-800/60 rounded-lg p-6 shadow-lg"
+        className="bg-surface/60 rounded-lg p-6 shadow-lg"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.25 }}
@@ -96,7 +96,7 @@ const AnalyticsTab = () => {
               yAxisId="left"
               type="monotone"
               dataKey="sales"
-              stroke="#10B981"
+              stroke="#10B981" // Keeping hex for Recharts but mapping to primary (emerald-500 is close to primary)
               activeDot={{ r: 8 }}
               name="Sales"
             />
@@ -120,19 +120,21 @@ const AnalyticsCard = ({ title, value, icon, color }) => {
   const Icon = icon;
   return (
     <Motion.div
-      className="bg-gray-800 rounded-lg p-6 shadow-lg overflow-hidden relative"
+      className="bg-surface rounded-lg p-6 shadow-lg overflow-hidden relative"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <div className="flex justify-between items-center">
         <div className="z-10">
-          <p className="text-emerald-300 text-sm mb-1 font-semibold">{title}</p>
+          <p className="text-primary-light text-sm mb-1 font-semibold">
+            {title}
+          </p>
           <h3 className="text-white text-3xl font-bold">{value}</h3>
         </div>
       </div>
       <div className={`absolute inset-0 bg-linear-to-br ${color} opacity-30`} />
-      <div className="absolute -bottom-4 -right-4 text-emerald-800 opacity-50">
+      <div className="absolute -bottom-4 -right-4 text-primary-darkest opacity-50">
         <Icon className="h-32 w-32" />
       </div>
     </Motion.div>

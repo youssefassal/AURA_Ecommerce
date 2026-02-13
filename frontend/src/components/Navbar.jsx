@@ -9,34 +9,35 @@ const Navbar = () => {
   const { cart } = useCartStore();
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-gray-900 backdrop-blur-md shadow-lg z-40 transition-all duration-300 border-b border-emerald-800">
+    <header className="fixed top-0 left-0 w-full bg-bg-dark backdrop-blur-md shadow-lg z-40 transition-all duration-300 border-b border-primary-darkest">
       <div className="container mx-auto px-4 py-3">
-        <div className="flex flex-wrap items-center justify-between">
-          <Link
-            to="/"
-            className="text-2xl font-bold text-emerald-400 items-center space-x-2 flex"
-          >
-            AURA
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <Link to="/" className="flex items-center">
+            <img
+              src="/logo-purple-removebg.png"
+              alt="AURA Logo"
+              className="h-8 sm:h-10 w-auto object-contain"
+            />
           </Link>
-          <nav className="flex flex-wrap items-center gap-4">
+          <nav className="flex items-center gap-2 sm:gap-4">
             <Link
               to="/"
-              className="text-gray-300 hover:text-emerald-400 transition duration-300 ease-in-out"
+              className="hidden md:block text-gray-300 hover:text-primary transition duration-300 ease-in-out"
             >
               Home
             </Link>
             {user && (
               <Link
                 to="/cart"
-                className="relative group text-gray-300 hover:text-emerald-400 transition duration-300 ease-in-out"
+                className="relative group text-gray-300 hover:text-primary transition duration-300 ease-in-out flex items-center"
               >
                 <ShoppingCart
-                  className="inline-block mr-1 group-hover:text-emerald-400"
+                  className="group-hover:text-primary shrink-0"
                   size={20}
                 />
-                <span className="hidden sm:inline">Cart</span>
+                <span className="ml-1">Cart</span>
                 {cart.length > 0 && (
-                  <span className="absolute -top-2 -left-2 bg-emerald-500 text-white rounded-full px-2 py-0.5 text-xs group-hover:bg-emerald-400 transition duration-300 ease-in-out">
+                  <span className="absolute -top-2 -left-2 bg-primary-dark text-white rounded-full h-5 w-5 flex items-center justify-center text-[10px] group-hover:bg-primary transition duration-300 ease-in-out">
                     {cart.length}
                   </span>
                 )}
@@ -45,38 +46,38 @@ const Navbar = () => {
             {isAdmin && (
               <Link
                 to="/secret-dashboard"
-                className="bg-emerald-700 hover:bg-emerald-600 text-white px-3 py-1 rounded-md font-medium flex items-center transition duration-300 ease-in-out"
+                className="bg-primary-darker hover:bg-primary-dark text-white px-2 sm:px-3 py-1.5 rounded-md font-medium flex items-center transition duration-300 ease-in-out text-sm sm:text-base"
               >
-                <Lock className="inline-block mr-1" size={18} />
-                <span className="hidden sm:inline">Dashboard</span>
+                <Lock className="mr-2" size={18} />
+                <span className="ml-1">Dashboard</span>
               </Link>
             )}
 
             {user ? (
               <button
                 onClick={logout}
-                className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-md flex items-center transition duration-300 ease-in-out"
+                className="bg-surface hover:bg-surface-hover text-white px-2 sm:px-4 py-2 rounded-md flex items-center transition duration-300 ease-in-out text-sm sm:text-base"
               >
-                <LogOut size={18} />
-                <span className="hidden sm:inline ml-2">Log Out</span>
+                <LogOut size={18} className="shrink-0" />
+                <span className="ml-2">Log Out</span>
               </button>
             ) : (
-              <>
+              <div className="flex items-center gap-2">
                 <Link
                   to="/signup"
-                  className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-md flex items-center transition duration-300 ease-in-out"
+                  className="bg-primary-darker hover:bg-primary-dark text-white px-2 sm:px-4 py-2 rounded-md flex items-center transition duration-300 ease-in-out text-sm sm:text-base"
                 >
                   <UserPlus className="mr-2" size={18} />
-                  Sign Up
+                  <span>Sign Up</span>
                 </Link>
                 <Link
                   to="/login"
-                  className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-md flex items-center transition duration-300 ease-in-out"
+                  className="bg-surface hover:bg-surface-hover text-white px-2 sm:px-4 py-2 rounded-md flex items-center transition duration-300 ease-in-out text-sm sm:text-base"
                 >
                   <LogIn className="mr-2" size={18} />
-                  Login
+                  <span>Login</span>
                 </Link>
-              </>
+              </div>
             )}
           </nav>
         </div>
