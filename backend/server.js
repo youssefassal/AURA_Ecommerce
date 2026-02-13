@@ -14,6 +14,7 @@ import analyticsRoutes from "./routes/analytics.route.js";
 import { connectDB } from "./lib/db.js";
 
 dotenv.config();
+connectDB();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -37,21 +38,12 @@ app.use("/api/coupons", couponRoutes);
 app.use("/api/payments", paymentRoutes);
 app.use("/api/analytics", analyticsRoutes);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/dist")));
-
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
-  });
-}
-
 app.get("/", (req, res) => {
   res.send("welcome to AURA API");
 });
 
 app.listen(PORT, () => {
   console.log("Server is running on http://localhost:" + PORT);
-  connectDB();
 });
 
 export default app;
