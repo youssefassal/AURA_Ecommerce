@@ -73,6 +73,17 @@ function App() {
           />
         </Routes>
       </div>
+      <footer className="relative z-50 text-center text-sm text-white/60 py-6">
+        Developed by{" "}
+        <a
+          href="https://www.neosoftware.tech/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white underline hover:text-white/80"
+        >
+          Neo Software
+        </a>
+      </footer>
       <Toaster />
     </div>
   );
